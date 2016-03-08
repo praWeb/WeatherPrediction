@@ -2,14 +2,22 @@
 <html>
 <head>
 	<title>Weather Prediction</title>
+	<link rel="stylesheet/less" type="text/css" href="styles/base.less"/>
+	<link rel="stylesheet" type="text/css" href="styles/sprite.css"/>
 </head>
 <body>
-	<div ng-view>
+	<div class="wp-main">
+		<div ng-view></div>
 	</div> 
 	<!-- script files -->
 	<script type="text/javascript" src="node_modules/angular/angular.js"></script>
 	<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
 	<script type="text/javascript" src="node_modules/whatwg-fetch/fetch.js"></script>
+	<!-- less.js has to be loaded before require.js , inorder to resolve mismatched anonymous define() function error -->
+	<script type="text/javascript" src="node_modules/less/dist/less.js"></script>
 	<script type="text/javascript" src="node_modules/requirejs/require.js" data-main="scripts/dest/main.js"></script>
+
+	
 </body>
 </html>
+

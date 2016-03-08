@@ -1,0 +1,21 @@
+.sprite { background-image: url('../images/sprites.png'); display: table-cell; background-color: transparent; background-repeat: no-repeat; }
+.sprite { width: 1867px; height: 1742px; background-position: -2px -1742px; }
+.bg-main { width: 1366px; height: 854px; background-position: -2px -870px; }
+.clouds-bg { width: 1863px; height: 432px; background-position: -2px -436px; }
+.sky_3 { width: 1533px; height: 432px; background-position: -2px -2px; }
+.UK-Map { width: 400px; height: 381px; background-position: -1370px -1359px; }
+.infographmap { width: 310px; height: 487px; background-position: -1370px -870px; }
+.11 { width: 56px; height: 56px; background-position: -1537px -369px; }
+.11 { width: 32px; height: 32px; background-position: -1537px -335px; }
+.heavyrain_sunny { width: 32px; height: 32px; background-position: -1537px -301px; }
+.heavy_rain { width: 32px; height: 32px; background-position: -1537px -267px; }
+.rain { width: 32px; height: 32px; background-position: -1537px -233px; }
+.rain_sunny { width: 32px; height: 32px; background-position: -1537px -199px; }
+.sunny { width: 32px; height: 32px; background-position: -1537px -165px; }
+.clear { width: 32px; height: 27px; background-position: -1537px -136px; }
+.cloudy { width: 32px; height: 26px; background-position: -1537px -108px; }
+.sunrise { width: 32px; height: 25px; background-position: -1537px -81px; }
+.humidity { width: 25px; height: 25px; background-position: -1537px -54px; }
+.data-loading { width: 48px; height: 12px; background-position: -1537px -40px; }
+.clock { width: 18px; height: 18px; background-position: -1537px -20px; }
+.table_view_inactive { width: 16px; height: 16px; background-position: -1537px -2px; }

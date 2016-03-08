@@ -1,0 +1,53 @@
+@import "variables.less";
+@import "helpers.less";
+
+/*
+This stylesheet contains the base styles of the whole website
+This site is mainly theme based.
+All the styles are prefixed by 'wp-' which means 'Prasanna'
+*/
+
+.wp-main{
+	background:@base-color url('/images/bg-main.jpg') no-repeat right fixed;
+}
+
+.wp-footer{
+	background-color: @base-footer-color;
+	bottom: 0;
+	width:100%;
+	color: hsl(@base-color-hue,0.2,0.9);
+}
+
+.wp-divider{
+	border-color: @base-body-color;
+}
+
+.wp-body{
+	background-color: @base-color;
+	opacity: 0.9;
+	.wp-body__header{
+		background-color: @base-body-color;
+		color: hsl(@base-color-hue, 0.2,0.7);
+		.wp-body__header__content{
+			.font-size(32px);
+			.font-family(@base-main-header-family);
+			.padding-top(20px);
+			.padding-bottom(20px);
+		}
+	}
+	.wp-body__introduction{
+		color: hsl(@base-color-hue, 0.3,0.8);
+	}
+}
+
+.wp-result-container{
+	.wp-result-container__group{
+
+		.wp-result-container__group__label{
+			display: inline;
+		}
+		.wp-result-container__group__value{
+			display: inline;
+		}
+	}
+}
