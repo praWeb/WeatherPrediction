@@ -1,0 +1,148 @@
+/*@sizes: xs(16px), s(32px), l(64px), xl(128px), xxl(256px)*/
+/*Helper classes*/
+.disp-inline {
+  display: inline;
+}
+/**/
+.text-center {
+  text-align: center;
+}
+/*
+This stylesheet contains the base styles of the whole website
+This site is mainly theme based.
+All the styles are prefixed by 'wp-' which means 'Prasanna'
+*/
+.clear-fix {
+  margin: 0;
+  padding: 0;
+}
+.sprite-container {
+  margin: 0 auto;
+}
+.sprite {
+  float: right;
+  margin-right: 10px;
+}
+html {
+  background: #B3E3F2 url('/images/bg-main.jpg') no-repeat right fixed;
+  min-width: 250px;
+}
+.wp-main {
+  margin-top: -33px !important;
+  background-color: #B3E3F2;
+  opacity: 0.8;
+}
+.wp-footer {
+  background-color: #0f4657;
+  width: 100%;
+  color: #e0e8eb;
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 2em;
+  margin-top: -2em;
+}
+.wp-body {
+  height: 100vh;
+  vertical-align: baseline;
+}
+.wp-body .wp-body__header {
+  background-color: #0a485c;
+  color: #a3bbc2;
+}
+.wp-body .wp-body__header .wp-body__header__content {
+  font-size: 32px;
+  font-family: cursive;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.wp-body .wp-body__introduction {
+  color: #52717a;
+  padding-top: 1%;
+}
+.wp-search-container {
+  margin: 0px 0px 30px 0;
+}
+.wp-search-container .wp-search-container__body {
+  padding: 15px 0px 0 0px;
+  margin: 10% auto 0px;
+  width: 50%;
+  background-color: #8cc7d9;
+}
+.wp-search-container .wp-search-container__body .wp-searach-container__body__field {
+  color: #52717a;
+  float: left;
+  padding-left: 5%;
+}
+.wp-search-container .wp-search-container__body .wp-search-container__body__button {
+  margin-top: 20px;
+}
+.wp-search-container .wp-search-container__body .wp-search-container__body__button input[type="submit"] {
+  background-color: #5994a6;
+  color: #e0e8eb;
+  padding: 15px;
+  cursor: pointer;
+  -webkit-appearance: button;
+  border: 0px;
+  width: 100%;
+}
+.wp-search-container .wp-result-container {
+  margin: 0 auto;
+  width: 50%;
+  display: block;
+}
+.wp-search-container .wp-result-container .wp-result-container__group {
+  width: 45%;
+  margin: 10px 0 10px 0;
+  line-height: 1.5;
+  padding: 0px 10px 0 10px;
+  float: left;
+}
+.wp-search-container .wp-result-container .wp-result-container__group .wp-result-container__group__label__container {
+  width: 100%;
+  background-color: #29383d;
+  height: 25px;
+  padding: 5px 0 5px 0;
+}
+.wp-search-container .wp-result-container .wp-result-container__group .wp-result-container__group__label__container .wp-result-container__group__label {
+  padding-left: 5px;
+  float: left;
+  color: #a3bbc2;
+}
+.wp-search-container .wp-result-container .wp-result-container__group .wp-result-container__group__value__container {
+  width: 100%;
+  background-color: #52717a;
+  height: 25px;
+  padding: 5px 0 5px 0;
+}
+.wp-search-container .wp-result-container .wp-result-container__group .wp-result-container__group__value__container .wp-result-container__group__value {
+  float: left;
+  color: #e0e8eb;
+  padding-left: 5px;
+}
+/*Error- handling*/
+.wp-screen-handler {
+  font-size: 18px;
+  font-family: cursive;
+  margin-top: 20px;
+}
+.wp-screen-handler .wp-screen-handler__data-loading {
+  color: #bdd4db;
+}
+.wp-screen-handler .wp-screen-handler__service-issue {
+  color: red;
+}
+/*results adjust*/
+.result-adjust {
+  margin-top: 20px !important;
+}
+/*For mobile devices*/
+@media (max-width: 768px) {
+  .wp-search-container__body {
+    width: 100% !important;
+    padding: 15px 0px 15px 0px !important;
+  }
+  .wp-result-container__group {
+    width: 100% !important;
+  }
+}
