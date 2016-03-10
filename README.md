@@ -1,6 +1,6 @@
 ********************  About  ************************
 
-This is a sample Weather Prediction application built using AngularJs, RequireJs, ES6, LESS, GULP, Bower, Karma, Jasmine.
+This is a sample Weather Prediction application built using AngularJs, RequireJs, ES6, LESS, GULP, Babel, Karma, Jasmine.
 Some gulp plugins are used for automated tasks of conversion of es6 to es5, less to css, minification of files and running test cases.
 
 **************Installation Instructions**************
