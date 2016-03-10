@@ -1,0 +1,160 @@
+<!-- Main body of the page -->
+<section ng-controller="AppController as wpDetails">
+	<section class="wp-body">
+		<!-- Title of the page -->
+		<section class="page-container text-center">
+			<section class="wp-body__header">
+				<h3 class="clear-margin wp-body__header__content"> US Weather Predictor</h3>
+			</section>
+			<section class="wp-body__introduction" ng-class="{'result-adjust':wpDetails.search.output!=null}">
+				<p>
+					Get the United states weather forecast here. May be time to follow what it says..
+				</p>
+			</section>
+		</section>
+		<!-- Search and results container -->
+		<section class="wp-search-container">
+			<!-- Search input field -->
+			<section class="wp-search-container__body text-center" ng-class="{'result-adjust':wpDetails.search.output!=null}">
+				<form name="weather-search" no-validate ng-submit="wpDetails.app.getWeatherInformation()">
+			  		<label for="search" class="wp-search-container__body__field-label">Enter Location / zip code of the area</label><br/>
+			  		<input type="text" class="wp-search-container__body__field-input" name="LCode" id="search" ng-model=wpDetails.search.input title="Please enter a valid location name or the post code of the same" placeholder="location/zipcode"/>
+			  		<div class="wp-search-container__body__button">
+			  			<input type="submit" value="Submit"/>
+			  		</div>
+			  	</form> 
+			</section>
+			<!-- Results container -->
+			<section class="margin-10 wp-result-container" ng-if="wpDetails.search.output!=null && wpDetails.search.fetching==false">
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">City name</div>
+						<div class="sprite location"> </div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.name}}
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Sunrise</div>
+						<div class="sprite sunrise"> </div> 
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.sys.sunrise | dateFormat}}
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Sunset</div>
+						<div class="sprite sunrise"> </div> 
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.sys.sunset | dateFormat}}
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Humidity</div>
+						<div class="sprite humidity"> </div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.main.humidity}}%
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Temparature</div>
+						<div class="sprite sunny"></div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.main.temp}} °C 
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Max Temparature</div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.main.temp_max}} °C 
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Min Temparature</div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.main.temp_min}} °C 
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Pressure (in hpa)</div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.main.pressure}}
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Visibility</div>
+						<div class="sprite clear"></div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.weather[0].main}}
+						</div>
+					</div>
+				</div>
+				<div class="wp-result-container__group">
+					<div class="wp-result-container__group__label__container">
+						<div class="wp-result-container__group__label">Wind (in mps)</div>
+					</div>
+					<div class="wp-result-container__group__value__container">
+						<div class="wp-result-container__group__value">
+							{{wpDetails.search.output.wind.speed}}
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Data loading and errors handled -->
+			<section class="margin-10 wp-screen-handler text-center" ng-if="wpDetails.search.output==null">
+				<section class="wp-screen-handler__data-loading" ng-show="wpDetails.search.fetching==true">
+					<img src="../images/loading/data-loading-s.gif"/>
+					<p class="text-center">
+						Please relax till we fetch the data....
+					</p>
+				</section>
+				<section class="wp-screen-handler__service-issue" ng-show="wpDetails.search.service.issue == true">
+					<div class="sprite-container">
+						<div class="sprite" ng-class="{'oops-sorry':wpDetails.search.service.status==404, 'wrong-input': wpDetails.search.service.status==0}">
+						</div>
+					</div>
+					<p class="text-center">{{wpDetails.search.service.message}}</p>
+				</section>
+			</section>
+		</section>
+	</section>
+	<!-- Footer -->
+	<footer class="wp-footer text-center">
+		All rights @Prasanna 
+	</footer>
+</section>
+
+
