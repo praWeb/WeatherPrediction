@@ -13,12 +13,10 @@ requirejs.config({
         dependencyResolverFor: '../dependencyResolverFor',
         moment: '../../node_modules/moment/min/moment-with-locales',
         momentTimezone: '../../node_modules/moment-timezone/builds/moment-timezone-with-data',
-        momentUtil: '../../node_modules/moment-timezone/moment-timezone-utils'
+        momentUtil: '../../node_modules/moment-timezone/moment.min'
     },
-
     callback: function callback() {
         "use strict";
-
         require(["app"], function (App) {
             angular.bootstrap(document.documentElement, ['WeatherPrediction']);
         });
