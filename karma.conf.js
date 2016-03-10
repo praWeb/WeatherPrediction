@@ -15,11 +15,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js',
-      {pattern:'node_modules/babel-polyfill/dist/polyfill.js', included:false},
-      {pattern: 'src/*.js', included: false},
-      {pattern: 'dest/*.js', included: false},
-      {pattern: 'test/*.js', included: false}
+      'scripts/test/test-main.js',
+      'node_modules/angular/angular.js',
+      {pattern :'node_modules/angular-route/angular-route.js', included: true},
+      'node_modules/angular-mocks/angular-mocks.js',
+      {pattern: 'node_modules/babel-polyfill/dist/polyfill.js', included:false},
+      {pattern: 'node_modules/moment-timezone/builds/moment-timezone-with-data.js', included:false},
+      {pattern: 'node_modules/moment/min/moment.min.js', included:false},
+      {pattern: 'scripts/*.js', included:false},
+      {pattern: 'scripts/src/*.js', included: false},
+      {pattern: 'scripts/dest/*.js', included: false},
+      {pattern: 'scripts/test/**/*.js', included: false}
     ],
 
 

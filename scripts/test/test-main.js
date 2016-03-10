@@ -18,7 +18,23 @@ require.config({
 
   // dynamically load all test files
   deps: allTestFiles,
-
+  paths:{
+    babelPolyfill : 'node_modules/babel-polyfill/dist/polyfill',
+    test: '../test',
+    angular : 'node_modules/angular/angular',
+    app : 'scripts/dest/app',
+    angularMock : 'node_modules/angular-mocks/angular-mocks',
+    approuter : 'scripts/approuter',
+    angularRoute : 'node_modules/angular-route/angular-route',
+    moment : 'node_modules/moment/min/moment.min',
+    momentTimezone : 'node_modules/moment-timezone/builds/moment-timezone-with-data'
+   // momentUtil : 'node_modules/moment-timezone/moment-timezone-utils'
+  },
+  shim: {
+    angular: { exports: 'angular' },
+    angularMock: { deps: ['angular'] },
+    approuter : { deps: ['angularRoute']}
+  },
   // we have to kickoff jasmine, as it is asynchronous
   callback: window.__karma__.start
 });
